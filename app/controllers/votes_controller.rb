@@ -5,4 +5,11 @@ class VotesController < ApplicationController
     vote.save!
     redirect_to(topics_path)
   end
+
+    def destroy
+    vote = Vote.find params[ :id ]
+    vote.destroy
+    redirect_to(topics_path)
+  end
+
 end
