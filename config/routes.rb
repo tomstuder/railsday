@@ -1,6 +1,14 @@
 Suggestotron::Application.routes.draw do
-  resources :votes
 
+# root
+  root 'topics#index'
+
+# added pages
+  get '/about' => 'pages#about'
+  get '/faq' => 'pages#faq'
+
+# resources
+  resources :votes
   resources :topics
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,7 +16,7 @@ Suggestotron::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'topics#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
