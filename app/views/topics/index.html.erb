@@ -1,31 +1,30 @@
-<h1>Listing topics</h1>
+<h1>♥ Your Favorite Topic!</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Topic</th>
 <!--       <th>Description</th> -->
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Votes</th>
+      <th>+1</th>
+      <th>-1</th>
+      <th> </th>
     </tr>
   </thead>
 
   <tbody>
  <% @topics.each do |topic| %>
     <tr>
-      <td><%= link_to topic.title, topic %></td>
+      <td class=""><%= link_to topic.title, topic %></td>
       <td><%= pluralize(topic.votes.count, "vote") %></td>
-      <td><%= button_to '♥', votes_path(topic_id: topic.id), method: :post, :class => "button alert" %></td>
+      <td><%= button_to '♥', votes_path(topic_id: topic.id), method: :post, :class => "button alert small radius round" %></td>
       <% if topic.votes.size > 0 %>
-        <td><%= button_to '-♥', vote_path(id: topic.votes.first.id), method: :delete, :class => "button" %></td>
+        <td><%= button_to '-♥', vote_path(id: topic.votes.first.id), method: :delete, :class => "button small radius round" %></td>
       <% end %>
-      <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small radius round btn-color" %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Topic', new_topic_path %>
+<%= link_to '+ Topic', new_topic_path, :class => "button small radius round" %>

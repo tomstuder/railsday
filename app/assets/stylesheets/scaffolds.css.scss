@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #eee;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -21,7 +21,7 @@ pre {
 a {
   color: #000;
   &:visited {
-    color: #666;
+    color: #000;
   }
   &:hover {
     color: #fff;
@@ -66,4 +66,20 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+td a {
+  font-size: 18px;
+}
+
+.btn-color {
+  color: #fff;
+  background-color: green;
+  &:hover {
+  background-color: green;
+  }
+}
+
+th {
+  background-color:#9FC1D8;
 }
