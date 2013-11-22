@@ -16,9 +16,9 @@
     <tr>
       <td><%= link_to topic.title, topic %></td>
       <td><%= pluralize(topic.votes.count, "vote") %></td>
-      <td><%= button_to '+1', votes_path(topic_id: topic.id), method: :post %></td>
+      <td><%= button_to '♥', votes_path(topic_id: topic.id), method: :post, :class => "button alert" %></td>
       <% if topic.votes.size > 0 %>
-        <td><%= button_to '-1', vote_path(id: topic.votes.first.id), method: :delete %></td>
+        <td><%= button_to '-♥', vote_path(id: topic.votes.first.id), method: :delete, :class => "button" %></td>
       <% end %>
       <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
